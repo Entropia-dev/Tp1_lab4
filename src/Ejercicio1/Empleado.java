@@ -4,12 +4,10 @@ public class Empleado {
 	
 	//Grupo 8:
 	//INTEGRANTES: Jonathan Martin Povis , Cristian Damian Rivero , Federico Ivan Parrotta.
-	//TP N°1
-	
-	
+	//TP Nï¿½1
 	
 	//Atributo estatico
-	private static int cont = 1000;
+	private static int identity = 1000;
 		
 	//Atributos
 	private final int id;
@@ -19,51 +17,50 @@ public class Empleado {
 	//Metodo estatico que devuelve 
 	public static int devuelveProximoId() 
 	{
-		return cont; 
+		return identity; 
 	}
 	
 	//Constructor que recibe los parametros "nombre" y la "edad".
-	public Empleado(int edad, String nombre)
+	public Empleado(String nombre, int edad)
 	{
-	this.id = cont++;
-	this.edad = edad;
-	this.nombre = nombre;
+		this.nombre = nombre;
+		this.edad = edad;
+		this.id = identity++;
 	}
 	
-
-	
-	//Completar constructor vacio, Considerar que dentro del constructor vacio se puede aprovechar el constructor Empleado.
+	//Constructor vacio.
 	public Empleado()
 	{
-		this.id = cont++;
-		edad = 99;
-		nombre= "Sin nombre";
+		this("Sin nombre", 99);
 	}
 	
 	//@Override del metodo toString() para que devuelva un string formateado.
-	public String toString() {
-		return "Empleado " + getNombre() + ", Edad:" + getEdad() + ", ID: "+ id ;
+	@Override 
+	public String toString() 
+	{
+		return "Empleado " + nombre + ", Edad:" + edad + ", ID: "+ id ;
 	}
 
 	//Setter setNombre
-	public void setNombre(String nombre) {
+	public void setNombre(String nombre) 
+	{
 		this.nombre = nombre;
-		}
+	}
 	//Setter setEdad
-	public void setEdad(int edad) {
+	public void setEdad(int edad) 
+	{
 		this.edad = edad;
-		}
-	 
+	}
 	 
 	//Getter getEdad
-	public int getEdad() {
+	public int getEdad() 
+	{
 		return edad;
 	}
 	
 	//Getter getNombre
-	public String getNombre() {
+	public String getNombre() 
+	{
 		return nombre;
 	}
-	
-	
 }
