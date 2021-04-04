@@ -1,6 +1,13 @@
 package Ejercicio1;
 
 public class Empleado {
+	
+	//Grupo 8:
+	//INTEGRANTES: Jonathan Martin Povis , Cristian Damian Rivero , Federico Ivan Parrotta.
+	//TP N°1
+	
+	
+	
 	//Atributo estatico
 	private static int cont = 1000;
 		
@@ -12,15 +19,25 @@ public class Empleado {
 	//Metodo estatico que devuelve 
 	public static int devuelveProximoId() 
 	{
-		return cont+1; 
+		return cont; 
 	}
 	
 	//Constructor que recibe los parametros "nombre" y la "edad".
+	public Empleado(int edad, String nombre)
+	{
+	this.id = cont++;
+	this.edad = edad;
+	this.nombre = nombre;
+	}
+	
+
 	
 	//Completar constructor vacio, Considerar que dentro del constructor vacio se puede aprovechar el constructor Empleado.
 	public Empleado()
 	{
-		this.id=cont++;
+		this.id = cont++;
+		edad = 99;
+		nombre= "Sin nombre";
 	}
 	
 	//@Override del metodo toString() para que devuelva un string formateado.
@@ -29,9 +46,15 @@ public class Empleado {
 	}
 
 	//Setter setNombre
-	
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+		}
 	//Setter setEdad
-	
+	public void setEdad(int edad) {
+		this.edad = edad;
+		}
+	 
+	 
 	//Getter getEdad
 	public int getEdad() {
 		return edad;
